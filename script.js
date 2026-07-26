@@ -145,6 +145,7 @@ function closeExperienceModal() {
   experienceModal.classList.remove("is-open");
   experienceModal.setAttribute("aria-hidden", "true");
   floatingExperience.classList.remove("is-expanded");
+  pauseExperienceAudio();
 }
 
 if (experienceCard && floatingExperience && experienceControl && experienceModal && experienceModalClose && experienceModalControl && experienceAudio) {
@@ -157,10 +158,13 @@ if (experienceCard && floatingExperience && experienceControl && experienceModal
   });
 
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && !floatingExperience.classList.contains("is-playing")) {
-      playExperienceAudio(false);
+    if (document.hidden) {
+      pauseExperienceAudio();
     }
   });
+
+  window.addEventListener("pagehide", pauseExperienceAudio);
+  window.addEventListener("blur", pauseExperienceAudio);
 
   experienceCard.addEventListener("click", (event) => {
     if (event.target.closest(".experience-control")) {
@@ -179,9 +183,12 @@ if (experienceCard && floatingExperience && experienceControl && experienceModal
 
   experienceControl.addEventListener("click", (event) => {
     event.stopPropagation();
-    if (mobileExperienceQuery.matches) {
+    const isPlaying = floatingExperience.classList.contains("is-playing");
+
+    if (mobileExperienceQuery.matches && !isPlaying) {
       openExperienceModal();
     }
+
     toggleExperienceAudio();
   });
 
