@@ -1780,7 +1780,34 @@ p {
 
 @media (max-width: 620px) {
   .container {
-    width: min(100% - 30px, 1180px);
+    width: min(100% - 24px, 1180px);
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
+  }
+
+  h3 {
+    font-size: 1.18rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 0.88rem;
   }
 
   .navbar {
@@ -1805,15 +1832,26 @@ p {
   }
 
   .hero {
-    padding-top: 96px;
+    padding: 88px 0 18px;
   }
 
   .hero-grid {
-    min-height: 560px;
+    min-height: 420px;
+    gap: 22px;
   }
 
   .hero-copy {
-    padding-top: 180px;
+    padding-top: 110px;
+  }
+
+  .hero-text {
+    margin-top: 16px;
+    font-size: 0.96rem;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 22px;
   }
 
   .hero-actions,
@@ -1822,7 +1860,33 @@ p {
   }
 
   .hero-panel {
-    padding: 22px;
+    padding: 16px;
+  }
+
+  .hero-panel strong {
+    font-size: 1.12rem;
+  }
+
+  .hero-panel ul {
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .hero-metrics {
+    margin-top: 20px;
+  }
+
+  .hero-metrics div {
+    padding: 14px 16px;
+  }
+
+  .hero-metrics strong {
+    font-size: 1.42rem;
+  }
+
+  .hero-metrics span {
+    font-size: 0.82rem;
+  }
   }
 
   .authority-grid,
@@ -1833,22 +1897,33 @@ p {
   }
 
   .story-strip {
-    padding-bottom: 56px;
+    padding-bottom: 42px;
   }
 
   .story-card,
   .story-card-featured {
-    grid-template-rows: 220px auto;
+    min-height: auto;
+    grid-template-rows: 170px auto;
+  }
+
+  .story-card > div,
+  .video-card div {
+    padding: 18px;
+  }
+
+  .story-card p,
+  .service-card p {
+    font-size: 0.88rem;
   }
 
   .video-card video {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
   }
 
   .portrait-card,
   .portrait-card img {
-    min-height: 380px;
-    height: 380px;
+    min-height: 320px;
+    height: 320px;
   }
 
   .portrait-card img {
@@ -1856,13 +1931,43 @@ p {
   }
 
   .portrait-note {
+    right: 12px;
+    bottom: 12px;
     width: calc(100% - 30px);
+    padding: 16px;
+  }
+
+  .portrait-note strong {
+    font-size: 1.08rem;
+  }
+
+  .authority-grid {
+    gap: 10px;
+  }
+
+  .authority-card {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .authority-card span {
+    margin-bottom: 16px;
   }
 
   .proof-card,
   .proof-card-large,
   .proof-card-small {
-    min-height: 360px;
+    min-height: 280px;
+  }
+
+  .proof-card div {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .proof-card strong {
+    font-size: 1.05rem;
   }
 
   .proof::before {
@@ -1871,26 +1976,62 @@ p {
 
   .service-card {
     min-height: auto;
+    padding: 18px;
+  }
+
+  .service-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 16px;
+  }
+
+  .preventive-list li,
+  .case-list li {
+    min-height: auto;
+    padding: 14px 16px 14px 42px;
   }
 
   .contact-form {
-    padding: 24px;
+    padding: 18px;
+  }
+
+  .contact-info p:not(.eyebrow) {
+    margin: 16px 0 20px;
+  }
+
+  .site-footer {
+    padding: 28px 0 110px;
   }
 
   .floating-experience {
-    right: 14px;
-    bottom: 14px;
+    right: 10px;
+    bottom: 10px;
+    gap: 6px;
   }
 
   .experience-control-box {
-    width: 178px;
+    width: 138px;
+    padding: 5px;
   }
 
   .experience-card {
-    width: 178px;
-    height: 132px;
-    padding: 15px;
+    width: 138px;
+    height: 92px;
+    padding: 12px;
     border-radius: 14px;
+  }
+
+  .experience-control {
+    height: 36px;
+  }
+
+  .experience-card strong {
+    font-size: 0.98rem;
+  }
+
+  .experience-card small,
+  .experience-kicker {
+    font-size: 0.66rem;
   }
 
   .experience-card:hover {
@@ -1907,11 +2048,11 @@ p {
 
   .floating-experience.is-expanded .experience-card {
     width: calc(100vw - 28px);
-    height: 230px;
+    height: 190px;
   }
 
   .experience-modal-card {
-    min-height: 430px;
-    padding: 28px;
+    min-height: 360px;
+    padding: 22px;
   }
 }
