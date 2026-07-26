@@ -503,6 +503,10 @@ p {
   line-height: 1.2;
 }
 
+.mobile-note {
+  display: none;
+}
+
 .about-copy > p:not(.eyebrow) {
   max-width: 680px;
   margin-top: 24px;
@@ -2099,19 +2103,27 @@ p {
   }
 
   .portrait-note {
-    right: 12px;
+    right: 10px;
     bottom: 12px;
-    width: min(82%, 270px);
-    padding: 12px 14px;
+    width: min(68%, 230px);
+    padding: 10px 12px;
   }
 
   .portrait-note span {
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-size: 0.64rem;
   }
 
+  .desktop-note {
+    display: none;
+  }
+
+  .mobile-note {
+    display: block;
+  }
+
   .portrait-note strong {
-    font-size: 0.9rem;
+    font-size: 0.86rem;
     line-height: 1.16;
   }
 
