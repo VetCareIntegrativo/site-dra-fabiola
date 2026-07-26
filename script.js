@@ -45,6 +45,7 @@ const experienceModal = document.querySelector(".experience-modal");
 const experienceModalClose = document.querySelector(".experience-modal-close");
 const experienceModalControl = document.querySelector(".experience-modal-control");
 const experienceAudio = document.querySelector(".experience-audio");
+const mobileExperienceQuery = window.matchMedia("(max-width: 620px)");
 let audioContext;
 let ambientOscillator;
 let ambientGain;
@@ -178,6 +179,9 @@ if (experienceCard && floatingExperience && experienceControl && experienceModal
 
   experienceControl.addEventListener("click", (event) => {
     event.stopPropagation();
+    if (mobileExperienceQuery.matches) {
+      openExperienceModal();
+    }
     toggleExperienceAudio();
   });
 
