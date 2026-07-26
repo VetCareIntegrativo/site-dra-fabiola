@@ -486,7 +486,7 @@ p {
   box-shadow: var(--deep-shadow);
 }
 
-.portrait-note span {
+.portrait-note > span {
   display: block;
   margin-bottom: 12px;
   color: var(--sage);
@@ -1734,7 +1734,7 @@ p {
   .about-grid {
     grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1.3fr);
     gap: 28px;
-    align-items: center;
+    align-items: start;
   }
 
   .portrait-card {
@@ -2092,14 +2092,16 @@ p {
     aspect-ratio: 16 / 9;
   }
 
-  .portrait-card,
-  .portrait-card img {
-    min-height: 320px;
-    height: 320px;
+  .portrait-card {
+    height: auto;
+    min-height: 0;
   }
 
   .portrait-card img {
-    object-position: center 8%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center top;
   }
 
   .portrait-note {
@@ -2109,7 +2111,7 @@ p {
     padding: 10px 12px;
   }
 
-  .portrait-note span {
+  .portrait-note > span {
     margin-bottom: 5px;
     font-size: 0.64rem;
   }
