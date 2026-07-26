@@ -503,7 +503,7 @@ p {
   line-height: 1.2;
 }
 
-.mobile-note {
+.portrait-note .mobile-note {
   display: none;
 }
 
@@ -2114,11 +2114,11 @@ p {
     font-size: 0.64rem;
   }
 
-  .desktop-note {
+  .portrait-note .desktop-note {
     display: none;
   }
 
-  .mobile-note {
+  .portrait-note .mobile-note {
     display: block;
   }
 
