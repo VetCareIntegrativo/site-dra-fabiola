@@ -45,7 +45,6 @@ const experienceModal = document.querySelector(".experience-modal");
 const experienceModalClose = document.querySelector(".experience-modal-close");
 const experienceModalControl = document.querySelector(".experience-modal-control");
 const experienceAudio = document.querySelector(".experience-audio");
-const mobileExperienceQuery = window.matchMedia("(max-width: 620px)");
 let audioContext;
 let ambientOscillator;
 let ambientGain;
@@ -126,12 +125,26 @@ function pauseExperienceAudio() {
   updateExperienceState(false, "Audio pausado");
 }
 
+function isExperiencePlaying() {
+  return !experienceAudio.paused || Boolean(ambientOscillator) || floatingExperience.classList.contains("is-playing");
+}
+
 function toggleExperienceAudio() {
-  if (floatingExperience.classList.contains("is-playing")) {
+  if (isExperiencePlaying()) {
     pauseExperienceAudio();
     return;
   }
 
+  playExperienceAudio(true);
+}
+
+function handleExperienceControlClick() {
+  if (isExperiencePlaying()) {
+    pauseExperienceAudio();
+    return;
+  }
+
+  openExperienceModal();
   playExperienceAudio(true);
 }
 
@@ -182,17 +195,15 @@ if (experienceCard && floatingExperience && experienceControl && experienceModal
   });
 
   experienceControl.addEventListener("click", (event) => {
+    event.preventDefault();
     event.stopPropagation();
-    const isPlaying = floatingExperience.classList.contains("is-playing");
-
-    if (mobileExperienceQuery.matches && !isPlaying) {
-      openExperienceModal();
-    }
-
-    toggleExperienceAudio();
+    handleExperienceControlClick();
   });
 
-  experienceModalControl.addEventListener("click", toggleExperienceAudio);
+  experienceModalControl.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleExperienceAudio();
+  });
   experienceModalClose.addEventListener("click", closeExperienceModal);
 
   experienceModal.addEventListener("click", (event) => {
