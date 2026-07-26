@@ -1695,6 +1695,110 @@ p {
   }
 }
 
+@media (min-width: 861px) and (max-width: 1180px) {
+  .container {
+    width: min(960px, calc(100% - 34px));
+  }
+
+  .navbar {
+    min-height: 70px;
+    gap: 16px;
+  }
+
+  .logo-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo strong {
+    font-size: 1rem;
+  }
+
+  .logo small {
+    font-size: 0.66rem;
+  }
+
+  .nav-links {
+    gap: 12px;
+    font-size: 0.8rem;
+  }
+
+  .section {
+    padding: 62px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(250px, 0.7fr) minmax(0, 1.3fr);
+    gap: 28px;
+    align-items: center;
+  }
+
+  .portrait-card {
+    min-height: 360px;
+  }
+
+  .portrait-card img {
+    height: 360px;
+    object-position: center 10%;
+  }
+
+  .portrait-note {
+    right: 10px;
+    bottom: 14px;
+    width: calc(100% - 20px);
+    padding: 16px;
+  }
+
+  .portrait-note strong {
+    font-size: 1.02rem;
+  }
+
+  .about-copy > p:not(.eyebrow) {
+    margin-top: 16px;
+    font-size: 0.96rem;
+  }
+
+  .authority-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .authority-card {
+    min-height: 120px;
+    padding: 13px;
+  }
+
+  .authority-card span {
+    margin-bottom: 18px;
+    font-size: 0.7rem;
+  }
+
+  .authority-card strong {
+    font-size: 0.78rem;
+    line-height: 1.32;
+  }
+
+  .floating-experience {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .experience-control-box,
+  .experience-card {
+    width: 170px;
+  }
+
+  .experience-card {
+    height: 110px;
+    padding: 14px;
+  }
+
+  .experience-card strong {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 860px) {
   .section {
     padding: 68px 0;
