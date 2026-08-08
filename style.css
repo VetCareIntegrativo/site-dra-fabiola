@@ -1100,14 +1100,57 @@ p {
   z-index: 1;
 }
 
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: -8px 0 28px;
+  padding: 22px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 18px 58px rgba(20, 47, 63, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.reviews-summary div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.reviews-summary strong {
+  color: var(--ink);
+  font-family: "Castoro", Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.reviews-summary span,
+.review-stars {
+  color: #d6a84d;
+  letter-spacing: 1px;
+}
+
+.reviews-summary span {
+  font-size: 1.35rem;
+}
+
+.reviews-summary p {
+  color: var(--earth);
+  font-weight: 800;
+}
+
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
 .testimonial-card {
-  min-height: 230px;
+  min-height: 310px;
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1115,11 +1158,16 @@ p {
   box-shadow: 0 18px 58px rgba(20, 47, 63, 0.07);
 }
 
+.review-stars {
+  margin-bottom: 18px;
+  font-size: 0.96rem;
+}
+
 .testimonial-card p {
   margin-bottom: 24px;
   color: var(--ink);
   font-family: "Castoro", Georgia, serif;
-  font-size: 1.18rem;
+  font-size: 1.04rem;
   line-height: 1.34;
 }
 
@@ -1140,7 +1188,7 @@ p {
 
 .featured-testimonial {
   color: var(--ivory);
-  background: var(--clay);
+  background: linear-gradient(145deg, var(--olive), var(--ink));
   transform: translateY(-22px);
 }
 
@@ -1148,6 +1196,10 @@ p {
 .featured-testimonial strong,
 .featured-testimonial span {
   color: var(--ivory);
+}
+
+.featured-testimonial .review-stars {
+  color: var(--linen);
 }
 
 /* Contato */
@@ -1770,6 +1822,18 @@ p {
     line-height: 1.32;
   }
 
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-card {
+    min-height: 260px;
+  }
+
+  .featured-testimonial {
+    transform: none;
+  }
+
   .floating-experience {
     right: 14px;
     bottom: 14px;
@@ -2146,6 +2210,30 @@ p {
   .case-list li {
     min-height: auto;
     padding: 14px 16px 14px 42px;
+  }
+
+  .reviews-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 18px;
+  }
+
+  .reviews-summary strong {
+    font-size: 2.2rem;
+  }
+
+  .reviews-summary span {
+    font-size: 1.05rem;
+  }
+
+  .testimonial-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .testimonial-card p {
+    font-size: 1rem;
   }
 
   .contact-form {
